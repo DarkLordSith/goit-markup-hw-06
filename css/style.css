@@ -106,6 +106,7 @@ button {
 
 .mobile-menu {
   position: fixed;
+  z-index: 1;
   align-items: start;
   top: 0;
   left: 0;
@@ -117,6 +118,7 @@ button {
   pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: auto;
 }
 
 .mobile-menu.is-open {
@@ -255,20 +257,31 @@ button {
 
 .hero {
   background-color: #2e2f42;
-  padding-top: 188px;
-  padding-bottom: 188px;
+  padding-top: 72px;
+  padding-bottom: 72px;
   background-image: linear-gradient(
       to bottom,
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/img-11.jpg);
+    url(../images/Dark-bg-mob.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1440px;
+  max-width: auto;
   background-position: center;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 2dppx),
+  (min-resolution: 192dpi) {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/Dark-bg-mob2x.jpg);
 }
 
 .hero-container {
@@ -276,13 +289,14 @@ button {
 }
 
 .hero-title {
-  font-size: 56px;
-  line-height: 1.07;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11111;
   letter-spacing: 0.02em;
   text-align: center;
   color: #fff;
-  margin-bottom: 48px;
-  max-width: 496px;
+  margin-bottom: 72px;
+  max-width: 216px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -574,30 +588,40 @@ button {
 
 .page-footer {
   background-color: #2e2f42;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .footer-content {
-  margin-right: 120px;
 }
 
 .footer-logo {
-  display: inline-block;
   margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-text {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-  max-width: 264px;
-  margin-bottom: 16px;
+  max-width: 288px;
+  margin-bottom: 72px;
 }
 
 .footer-container {
   display: flex;
-  align-items: baseline;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-socialmedia {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 72px;
 }
 
 .footer-sm-text {
@@ -607,6 +631,7 @@ button {
   letter-spacing: 0.02em;
   color: #fff;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .footer-sm-list {
@@ -640,7 +665,10 @@ button {
 }
 
 .footer-subscribe-container {
-  margin-left: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-subscribe-text {
@@ -654,7 +682,10 @@ button {
 
 .footer-subscribe-form {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
 .footer-email-input {
@@ -666,7 +697,7 @@ button {
   line-height: 2;
   letter-spacing: 0.04em;
   color: #fff;
-  padding-left: 16px;
+  padding-left: 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
@@ -736,16 +767,18 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 408px;
-  min-height: 584px;
+  width: 288px;
+  min-height: 623px;
   border-radius: 4px;
   transform: translate(-50%, -50%);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background-color: #fcfcfc;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 24px;
   padding-top: 72px;
+  padding-bottom: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .modal-close-btn {
@@ -797,6 +830,10 @@ button {
   color: #8e8f99;
 }
 
+.modal-checkbox {
+  /* width: 256px; */
+}
+
 .modal-label {
   line-height: 1.17;
   display: block;
@@ -812,7 +849,7 @@ button {
   border-radius: 4px;
   height: 40px;
   background-color: transparent;
-  padding-left: 38px;
+  padding-left: 34px;
   padding-right: 24px;
   color: #1e1823;
   font-size: 12px;
@@ -878,8 +915,20 @@ button {
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
-  justify-content: left;
+  display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.checkbox-icon {
+  height: 8px;
+}
+
+.privacy-span-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: start;
 }
 
 .privacy-title {
@@ -920,6 +969,10 @@ button {
 /* ------------MEDIA RULES------------- */
 
 @media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+
   /* ----HEADER---- */
   .header-logo {
     padding: 24px 0;
@@ -998,12 +1051,39 @@ button {
   .mobile-menu {
     display: none;
   }
+  /* -------------- */
+  /* -----HERO----- */
 
+  .hero {
+    padding-top: 112px;
+    padding-bottom: 112px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/Dark-bg-tab.jpg);
+
+    @media screen and (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 2dppx),
+      (min-resolution: 192dpi) {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/Dark-bg-tab2x.jpg);
+    }
+  }
+
+  .hero-title {
+    font-size: 56px;
+    line-height: 1.07;
+    max-width: 496px;
+    margin-bottom: 36px;
+  }
   /* -------------- */
   /* ---FEATURES--- */
-  .container {
-    max-width: 768px;
-  }
 
   .features-list {
     gap: 72px 24px;
@@ -1046,6 +1126,53 @@ button {
   .portfolio-content {
     width: 356px;
   }
+  /* -------------- */
+
+  /* ----FOOTER---- */
+
+  .footer-logo {
+    justify-content: start;
+  }
+
+  .footer-content {
+    max-width: 264px;
+  }
+
+  .footer-container {
+    align-items: baseline;
+    max-width: 584px;
+    gap: 24px;
+  }
+
+  .footer-socialmedia {
+    display: block;
+  }
+
+  .footer-sm-text {
+    text-align: left;
+  }
+
+  .footer-subscribe-container {
+    display: block;
+  }
+
+  .footer-subscribe-form {
+    gap: 24px;
+  }
+  /* -------------- */
+
+  /* -----MODAL---- */
+  .modal {
+    width: 408px;
+    min-height: 584px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .privacy-span-text {
+    display: block;
+  }
+  /* -------------- */
 }
 
 @media screen and (min-width: 1158px) {
@@ -1066,6 +1193,35 @@ button {
     line-height: 1.5;
     letter-spacing: 0.02em;
   }
+  /* -------------- */
+  /* -----HERO----- */
+
+  .hero {
+    padding-top: 188px;
+    padding-bottom: 188px;
+    margin-bottom: 36px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/img-11.jpg);
+    @media screen and (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 2dppx),
+      (min-resolution: 192dpi) {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/img-11-2x.jpg);
+    }
+  }
+
+  .hero-title {
+    margin-bottom: 48px;
+  }
+  /* -------------- */
   /* ---FEATURES--- */
   .container {
     max-width: 1158px;
@@ -1144,4 +1300,45 @@ button {
   .portfolio-content {
     width: 360px;
   }
+  /* -------------- */
+
+  /* ----FOOTER---- */
+  .page-footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .footer-content {
+    margin-right: 120px;
+  }
+
+  .footer-logo {
+    display: inline-block;
+  }
+
+  .footer-text {
+    width: 264px;
+  }
+
+  .footer-container {
+    gap: 0;
+  }
+
+  .footer-socialmedia {
+    padding-bottom: 0;
+  }
+
+  .footer-subscribe-container {
+    padding-left: 80px;
+  }
+
+  .footer-email-input {
+    padding-left: 16px;
+  }
+  /* -------------- */
+
+  /* -----MODAL---- */
+  .modal-input {
+    padding-left: 38px;
+  }
+  /* -------------- */
 }
