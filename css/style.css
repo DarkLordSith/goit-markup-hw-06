@@ -1148,10 +1148,9 @@ button {
   /* -----HERO----- */
 
   .hero {
-    max-width: 1158px;
+    max-width: 1440px;
     padding-top: 188px;
     padding-bottom: 188px;
-    margin-bottom: 36px;
     background-image: linear-gradient(
         to bottom,
         rgba(46, 47, 66, 0.7),
@@ -1191,6 +1190,10 @@ button {
 
   .features-item {
     width: calc((100% - 3 * 24px) / 4);
+  }
+
+  .features-item-text {
+    font-weight: 400;
   }
 
   .features-container {
